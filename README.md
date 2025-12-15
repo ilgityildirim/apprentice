@@ -2,7 +2,7 @@
 
 **The lightweight, agentic-first IDE. No bloat, no rental software, just work.**
 
-![Version](https://img.shields.io/badge/status-alpha_v0.0.1-orange) ![Platform](https://img.shields.io/badge/platform-win%20|%20mac%20|%20linux-lightgrey)
+![Version](https://img.shields.io/badge/status-alpha_v0.0.2-orange) ![Platform](https://img.shields.io/badge/platform-win%20|%20mac%20|%20linux-lightgrey)
 
 ---
 
@@ -40,52 +40,33 @@ teaches you / helps you not forget / remember how things work when you want to l
 
 ### Download & Installation
 
-⚠️ **There is no source code in this repo.** This repository hosts the compiled binaries / executables and tracks issues.
+⚠️ **There is no source code in this repo.** This repository hosts the compiled binaries / executables, tracks issues and provide a discussion board for the community.
 
-1.  Go to the **[Releases](https://github.com/ilgityildirim/apprentice/releases)** page on the right.
-2.  Download the version for your OS:
-    * `apprentice.exe` (for Windows)
-    * `apprentice.dmg` (soon - MacOS)
-    * `apprentice.AppImage` (soon - Linux)
-3.  Run it. That's it.
+1.  Go to the **[Releases](https://github.com/ilgityildirim/apprentice/releases)** page.
+2.  Download the version for your OS.
+3.  Run it. That's it. No installation needed.
+
+### Important Info
+Windows and MacOS requires signing the application. I didn't create my personal developer account for these platforms yet. Of course, they require yearly payments / subscriptions.
+Once I subscribe to their platform, I'll be able to sign Apprentice application. Till then unfortunately there will be a warning when you want to open this application for the first time (each new version).
 
 ### What Do You Need?
-* Current version (v0.0.1) requires Claude Code CLI to be installed. **[Get it here](https://claude.com/product/claude-code)**.
+* Currently, Apprentice requires Claude Code CLI to be installed. **[Get it here](https://claude.com/product/claude-code)**.
 
 **Note:** Future versions will support multiple LLM providers.
 
 ### Roadmap (Building in Public)
-This is a raw, initial release. I am building this *with* you. I need your bug reports, your feature requests, and your honest feedback.
-
-#### v0.0.1 (Current)
-* Basic UI
-* Claude Code CLI integration
-* Work Sessions
-* Terminal integration
-* Agent sessions
-* File explorer
-* Basic settings
-* Persistent storage of sessions and settings
-* Basic git integration
-* Basic Code Editor
-* Lightweight and portable
-
-#### v0.0.2 (Next)
-* Search functionality across project files
-* Search functionality within sessions
-* Automatic updates & checks
-* OpenAI Codex integration
-* Linux build
-* [Your feature requests here](https://github.com/ilgityildirim/apprentice/issues)
-
-#### v0.0.3 (Later)
-* Gemini integration
-* MacOS build
-* [Your feature requests here](https://github.com/ilgityildirim/apprentice/issues)
+This is a raw, initial releases. I am building this *with* you. I need your bug reports, your feature requests, your ideas, and your honest feedback.
+Follow the current development on the [public project board](https://github.com/users/ilgityildirim/projects/7/views/1).
 
 ### Feedback
-Found a bug? Have an idea?
-Please **[open an issue](https://github.com/ilgityildirim/apprentice/issues)**. Your feedback is vital to making this the tool we all actually want to use.
+Found a bug? Please **[open an issue](https://github.com/ilgityildirim/apprentice/issues)**.
+
+Have an idea? Please [create a topic](https://github.com/ilgityildirim/apprentice/discussions/categories/ideas).
+
+Your feedback is vital to making this the tool we all actually want to use.
+
+Join the Discord community: [https://discord.gg/WmWxYbeJuu](https://discord.gg/WmWxYbeJuu)
 
 ---
 *Built for the builders* with love by [Ilgıt Yıldırım](https://triplebits.com).
