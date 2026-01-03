@@ -2,7 +2,7 @@
 
 **The lightweight, agentic-first IDE. No bloat, no rental software, just work.**
 
-![Version](https://img.shields.io/badge/status-alpha_v0.0.2-orange) ![Platform](https://img.shields.io/badge/platform-win%20|%20mac%20|%20linux-lightgrey)
+![Version](https://img.shields.io/badge/status-v1.0.0_alpha.3-orange) ![Platform](https://img.shields.io/badge/platform-win%20|%20mac%20|%20linux-lightgrey)
 
 ---
 
