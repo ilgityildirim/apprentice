@@ -1,72 +1,61 @@
 # Apprentice
 
-**The lightweight, agentic-first IDE. No bloat, no rental software, just work.**
+![Version](https://img.shields.io/badge/version-v1.0.0--alpha.5-blue)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
+![Status](https://img.shields.io/badge/status-alpha-orange)
+![License](https://img.shields.io/badge/license-Proprietary-red)
+[![Discord](https://img.shields.io/badge/chat-Discord-5865F2)](https://discord.gg/WmWxYbeJuu)
 
-![Version](https://img.shields.io/badge/status-v1.0.0_alpha.3-orange) ![Platform](https://img.shields.io/badge/platform-win%20|%20mac%20|%20linux-lightgrey)
+**Run AI agents on your own machine. No cloud. No per-run fees. Sandboxed in Docker.**
 
----
+Apprentice is a cross-platform desktop app for building, running, and monitoring autonomous AI agents locally. Each agent lives in its own Docker container with a budget, permissions, guardrails, and memory, triggered by messaging channels, webhooks, or cron schedules.
 
-### Why I built this
+> **Status:** Alpha (v1.0.0-alpha.5). The agentic core is complete and stabilizing toward beta.
 
-I was tired. Tired of;
+This is **not** a coding IDE, chat client, or terminal wrapper. Apprentice is an **agent runtime** for people who want automations that run on their own hardware.
 
-* My machine sounding like it was about to take off every time I opened a modern IDE & tools with a few projects.
-* Context-switching between my editor, my terminal, and multiple tools.
-* Juggling multiple tools that never quite fit together.
-* Subscriptions that kept adding up.
-* Tools that try to lock me into their ecosystem instead of letting me choose.
-* Feeling like I would lose my edge as an engineer because tools were doing too much for me instead of with me.
-* Tools that couldn't keep up with the technological changes happening around them.
+## What you can do
 
-### What I believe
-I strongly believe;
-* If you pay for a tool, you should own that specific version forever. You paid for it, it should be yours to keep.
-* Development tools should be lightweight and fast.
-* You should be able to choose your own AI providers, not be locked into one.
-* Tools should help you learn and improve, not hide the mechanics from you.
-* Development environments should be organized around "work sessions" that keep context together; multiple sessions with agent(s), terminal etc.
-* You should be able to run your tools anywhere, without complex installations.
-* Development tools should get out of your way and let you focus on building things when you need to / want to.
+* **Security first**: nothing runs on your host. Every agent executes inside its own Docker container, isolated from your files, network, and other agents by default.
+* **Create agents in a guided wizard**: identity, model, instructions, permissions, guardrails, budget.
+* **Run agents in sandboxed Linux containers**, each as an isolated OS user with scoped filesystem, shell, and network access.
+* **Trigger from anywhere**: Telegram, Discord, Slack, Signal, WhatsApp, Email (IMAP/SMTP), webhooks, or cron.
+* **Control cost** with per-agent budget caps (daily, weekly, monthly resets), token limits, and overrun actions (pause, notify, hard-stop).
+* **Enforce safety** via AI-moderated guardrails, directory allow-lists, command allow and block-lists, and website filtering.
+* **Give agents memory** through persistent knowledge bases with local semantic embeddings. No external API.
+* **Let agents browse the web** with isolated sessions per agent. Credentials and cookies stay scoped to each agent, and you choose what to share across them.
+* **Use your own provider**: BYO Claude subscription, or run fully local via LM Studio. No vendor lock-in.
+* **Audit everything your agent does**: every tool call, message, cost, and decision is logged locally so you can review exactly what happened and why.
 
-**Apprentice is the answer.** It's portable, it's fast, and it gets out of your way when you just want to build or 
-teaches you / helps you not forget / remember how things work when you want to learn.
+## Who it's for
 
-### What makes it different?
+Practically anyone who wants automations that don't live in someone else's cloud.
 
-* **Works with Your Subscriptions:** pick your AI provider that you've already subscribed to; whether you prefer **Claude Code, OpenAI, Gemini, GitHub Copilot**, or running **Local LLMs**, Apprentice handles them all.
-* **Work Sessions:** A sane way to organize. Create a "Feature," then spin up Terminal or Agent sessions inside it. Keep the context where it belongs.
-* **Portable:** No installers. No registry clutter. Just download the binary / executable and run it.
-* **The "Use It or Lose It" Philosophy:** Designed to teach "vibecoders" (non-technical users) how things work while keeping seasoned engineers sharp. It doesn't hide the mechanics from you; it helps you remember and learn.
+* **Indie operators and solo founders** automating lead triage, support intake, content monitoring, and personal research.
+* **Small businesses and startups** running back-office automations without paying per-seat SaaS for every workflow.
+* **Privacy-conscious professionals** (lawyers, therapists, accountants, consultants) who can't send client data to cloud SaaS.
+* **Self-hosters and homelab users** who want agentic workflows on their own servers.
+* **Agencies** building white-labelable automations for clients.
+* **Curious tinkerers** who just want to see what local, sandboxed AI agents can do.
 
-### Download & Installation
+## Requirements
 
-⚠️ **There is no source code in this repo.** This repository hosts the compiled binaries / executables, tracks issues and provide a discussion board for the community.
+* **Windows, macOS, or Linux**
+* **Docker** (Docker Desktop on Windows and macOS, Docker Engine on Linux)
+* **At least one AI provider**: an active Claude subscription, or a local LLM via LM Studio
 
-1.  Go to the **[Releases](https://github.com/ilgityildirim/apprentice/releases)** page.
-2.  Download the version for your OS.
-3.  Run it. That's it. No installation needed.
+## Community
 
-### Important Info
-Windows and MacOS requires signing the application. I didn't create my personal developer account for these platforms yet. Of course, they require yearly payments / subscriptions.
-Once I subscribe to their platform, I'll be able to sign Apprentice application. Till then unfortunately there will be a warning when you want to open this application for the first time (each new version).
+Join the Discord: [discord.gg/WmWxYbeJuu](https://discord.gg/WmWxYbeJuu)
 
-### What Do You Need?
-* Currently, Apprentice requires Claude Code CLI to be installed. **[Get it here](https://claude.com/product/claude-code)**.
+## Links
 
-**Note:** Future versions will support multiple LLM providers.
-
-### Roadmap (Building in Public)
-This is a raw, initial releases. I am building this *with* you. I need your bug reports, your feature requests, your ideas, and your honest feedback.
-Follow the current development on the [public project board](https://github.com/users/ilgityildirim/projects/7/views/1).
-
-### Feedback
-Found a bug? Please **[open an issue](https://github.com/ilgityildirim/apprentice/issues)**.
-
-Have an idea? Please [create a topic](https://github.com/ilgityildirim/apprentice/discussions/categories/ideas).
-
-Your feedback is vital to making this the tool we all actually want to use.
-
-Join the Discord community: [https://discord.gg/WmWxYbeJuu](https://discord.gg/WmWxYbeJuu)
+* **Website:** https://apprenticedev.com
+* **Downloads and releases:** [Releases](../../releases)
+* **Report an issue:** [Issues](../../issues)
 
 ---
+
+© 2026 Triple Bits. Proprietary software. Community Edition is free for personal and commercial use within tier limits.
+
 *Built for the builders* with love by [Ilgıt Yıldırım](https://triplebits.com).
