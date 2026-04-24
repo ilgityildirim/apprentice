@@ -50,7 +50,7 @@ Join the Discord: [discord.gg/WmWxYbeJuu](https://discord.gg/WmWxYbeJuu)
 
 ## Links
 
-* **Website:** https://apprenticedev.com
+* **Website:** https://apprentice.viberden.com
 * **Downloads and releases:** [Releases](../../releases)
 * **Report an issue:** [Issues](../../issues)
 
