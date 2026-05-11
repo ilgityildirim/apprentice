@@ -1,6 +1,6 @@
 # Apprentice
 
-![Version](https://img.shields.io/badge/version-v1.0.0--beta.3-blue)
+![Version](https://img.shields.io/badge/version-v1.0.0--beta.4-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
 ![Status](https://img.shields.io/badge/status-alpha-orange)
 ![License](https://img.shields.io/badge/license-Proprietary-red)
@@ -10,7 +10,7 @@
 
 Apprentice is a cross-platform desktop app for building, running, and monitoring autonomous AI agents locally. Each agent lives in its own Docker container with a budget, permissions, guardrails, and memory, triggered by messaging channels, webhooks, or cron schedules.
 
-> **Status:** Beta (v1.0.0-beta.3). The agentic core is complete and stabilizing toward beta.
+> **Status:** Beta (v1.0.0-beta.4). The agentic core is complete and stabilizing toward beta.
 
 This is **not** a coding IDE, chat client, or terminal wrapper. Apprentice is an **agent runtime** for people who want automations that run on their own hardware.
 
