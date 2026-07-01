@@ -1,6 +1,6 @@
 # Apprentice
 
-![Version](https://img.shields.io/badge/version-v2026.06.29-blue)
+![Version](https://img.shields.io/badge/version-v2026.07.01-blue)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
 ![Status](https://img.shields.io/badge/status-alpha-orange)
 ![License](https://img.shields.io/badge/license-Proprietary-red)
