@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apprentice.triplebits.com/models.schema.json",
+  "title": "Apprentice model catalog",
+  "description": "Contract for the published models.json. Hand written, not inferred from an instance: a field is required here only when the catalog genuinely cannot mean anything without it. The converter (scripts/catalog_publish) checks every published document against this file, so a field added to the Go struct set in internal/domain/modelcatalog without a matching change here fails the publish instead of shipping an undocumented key. Optional values are emitted as JSON null rather than omitted, because the Go structs deliberately carry no omitempty: an absent rate must stay distinguishable from a 0.00 rate on the billing path. Integer fields use minimum 0 because 0 is how the catalog says 'not stated', not a real limit.",
+  "type": "object",
+  "required": ["schemaVersion", "updatedAt", "models", "providers"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "description": "Catalog schema version. A build rejects a document declaring a version higher than the one it was compiled against.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "updatedAt": {
+      "description": "Date the catalog data was last edited, ISO 8601 calendar date.",
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "defaults": {
+      "description": "Values applied to any model that omits the field.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "reasoning": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "defaultEffort": { "$ref": "#/$defs/optionalEffort" }
+          }
+        },
+        "thinking": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "default": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "models": {
+      "description": "Canonical model entries, keyed by canonical vendor model id. Every provider model reference resolves against this map.",
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "$ref": "#/$defs/id" },
+      "additionalProperties": { "$ref": "#/$defs/model" }
+    },
+    "providers": {
+      "description": "Which models each provider exposes and how that list is obtained, keyed by provider id.",
+      "type": "object",
+      "propertyNames": { "$ref": "#/$defs/id" },
+      "additionalProperties": { "$ref": "#/$defs/provider" }
+    }
+  },
+  "$defs": {
+    "id": {
+      "description": "A model or provider id: non-empty, no surrounding or embedded whitespace. Vendor ids legitimately carry dots, colons, and slashes, so the pattern is deliberately wider than the current data.",
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "effort": {
+      "description": "Reasoning-effort vocabulary. Must stay in step with knownEfforts in internal/domain/modelcatalog/validate.go.",
+      "type": "string",
+      "enum": ["none", "minimal", "low", "medium", "high", "xhigh", "max"]
+    },
+    "optionalEffort": {
+      "description": "An effort token, or the empty string meaning the catalog states no default.",
+      "anyOf": [{ "$ref": "#/$defs/effort" }, { "const": "" }]
+    },
+    "thinkingMode": {
+      "description": "Extended-thinking vocabulary. Must stay in step with knownThinkingModes in internal/domain/modelcatalog/validate.go.",
+      "type": "string",
+      "enum": ["adaptive", "enabled", "disabled"]
+    },
+    "rate": {
+      "description": "USD per million tokens. null means the catalog does not price this axis, which is not the same as a free 0.00 rate.",
+      "type": ["number", "null"],
+      "minimum": 0
+    },
+    "tokenCount": {
+      "description": "A token limit. 0 means the catalog states no limit.",
+      "type": "integer",
+      "minimum": 0
+    },
+    "model": {
+      "type": "object",
+      "required": ["label", "vendor"],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "description": "Human-readable model name shown in the UI.",
+          "type": "string",
+          "minLength": 1
+        },
+        "aliases": {
+          "description": "Additional exact ids the same model answers to. Exact alternative ids, never prefixes.",
+          "type": ["array", "null"],
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "vendor": {
+          "description": "Vendor that owns the model, for example anthropic or openai.",
+          "type": "string",
+          "minLength": 1
+        },
+        "contextWindow": { "$ref": "#/$defs/tokenCount" },
+        "maxOutputTokens": { "$ref": "#/$defs/tokenCount" },
+        "reasoning": { "$ref": "#/$defs/reasoning" },
+        "thinking": { "$ref": "#/$defs/thinking" },
+        "pricing": { "$ref": "#/$defs/pricing" }
+      }
+    },
+    "reasoning": {
+      "description": "The model's reasoning-effort axis.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "supported": {
+          "description": "null means the catalog states nothing, which is not a denial. false is an explicit denial.",
+          "type": ["boolean", "null"]
+        },
+        "efforts": {
+          "type": ["array", "null"],
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/effort" }
+        },
+        "defaultEffort": {
+          "description": "Must be a member of this model's own efforts list. That cross-field rule is enforced by Validate in internal/domain/modelcatalog, which JSON Schema cannot express.",
+          "$ref": "#/$defs/optionalEffort"
+        }
+      }
+    },
+    "thinking": {
+      "description": "The model's extended-thinking axis.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "supported": {
+          "description": "null means the catalog states nothing, which is not a denial.",
+          "type": ["boolean", "null"]
+        },
+        "modes": {
+          "type": ["array", "null"],
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/thinkingMode" }
+        },
+        "alwaysOn": {
+          "description": "null falls back to defaults.thinking.default rather than reading as false.",
+          "type": ["boolean", "null"]
+        },
+        "defaultBudgetTokens": { "$ref": "#/$defs/tokenCount" }
+      }
+    },
+    "pricing": {
+      "description": "USD rates per million tokens.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "input": { "$ref": "#/$defs/rate" },
+        "output": { "$ref": "#/$defs/rate" },
+        "cacheRead": { "$ref": "#/$defs/rate" },
+        "cacheWrite5m": { "$ref": "#/$defs/rate" },
+        "cacheWrite1h": { "$ref": "#/$defs/rate" },
+        "note": {
+          "description": "Free-text provenance or promotional note. Never parsed as data.",
+          "type": "string"
+        }
+      }
+    },
+    "provider": {
+      "type": "object",
+      "required": ["discovery"],
+      "additionalProperties": false,
+      "properties": {
+        "discovery": {
+          "description": "catalog means use the models list here. live means read the provider's own API at runtime and use fallbackModels only when it is unreachable.",
+          "type": "string",
+          "enum": ["catalog", "live"]
+        },
+        "reasoningTransport": {
+          "description": "How the effort reaches the provider, for example cli-flag for the Claude Code CLI.",
+          "type": "string"
+        },
+        "models": {
+          "description": "Model ids exposed under catalog discovery. Every id must exist in the top-level models map; that referential rule is enforced by Validate in internal/domain/modelcatalog.",
+          "type": ["array", "null"],
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "fallbackModels": {
+          "description": "Model ids used only when live discovery is unreachable. Same referential rule as models.",
+          "type": ["array", "null"],
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/id" }
+        }
+      }
+    }
+  }
+}

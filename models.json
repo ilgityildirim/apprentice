@@ -1,0 +1,851 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-07",
+  "defaults": {
+    "reasoning": {
+      "defaultEffort": "medium"
+    },
+    "thinking": {
+      "default": false
+    }
+  },
+  "models": {
+    "claude-fable-5": {
+      "label": "Fable 5",
+      "aliases": null,
+      "vendor": "anthropic",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": null,
+        "modes": [
+          "adaptive"
+        ],
+        "alwaysOn": true,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 10,
+        "output": 50,
+        "cacheRead": 0.25,
+        "cacheWrite5m": 12.5,
+        "cacheWrite1h": 20,
+        "note": ""
+      }
+    },
+    "claude-fable-5-1": {
+      "label": "Fable 5.1",
+      "aliases": null,
+      "vendor": "anthropic",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": null,
+        "modes": [
+          "adaptive"
+        ],
+        "alwaysOn": true,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 10,
+        "output": 50,
+        "cacheRead": 0.25,
+        "cacheWrite5m": 12.5,
+        "cacheWrite1h": 20,
+        "note": ""
+      }
+    },
+    "claude-haiku-4-5-20251001": {
+      "label": "Haiku 4.5",
+      "aliases": [
+        "claude-haiku-4-5"
+      ],
+      "vendor": "anthropic",
+      "contextWindow": 200000,
+      "maxOutputTokens": 64000,
+      "reasoning": {
+        "supported": false,
+        "efforts": null,
+        "defaultEffort": ""
+      },
+      "thinking": {
+        "supported": null,
+        "modes": [
+          "enabled",
+          "disabled"
+        ],
+        "alwaysOn": false,
+        "defaultBudgetTokens": 10000
+      },
+      "pricing": {
+        "input": 1,
+        "output": 5,
+        "cacheRead": 0.1,
+        "cacheWrite5m": 1.25,
+        "cacheWrite1h": 2,
+        "note": ""
+      }
+    },
+    "claude-opus-4-5-20251101": {
+      "label": "Opus 4.5",
+      "aliases": null,
+      "vendor": "anthropic",
+      "contextWindow": 200000,
+      "maxOutputTokens": 64000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": null,
+        "modes": [
+          "enabled",
+          "disabled"
+        ],
+        "alwaysOn": false,
+        "defaultBudgetTokens": 10000
+      },
+      "pricing": {
+        "input": 5,
+        "output": 25,
+        "cacheRead": 0.5,
+        "cacheWrite5m": 6.25,
+        "cacheWrite1h": 10,
+        "note": ""
+      }
+    },
+    "claude-opus-4-6": {
+      "label": "Opus 4.6",
+      "aliases": null,
+      "vendor": "anthropic",
+      "contextWindow": 200000,
+      "maxOutputTokens": 64000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "max"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": null,
+        "modes": [
+          "adaptive",
+          "enabled",
+          "disabled"
+        ],
+        "alwaysOn": false,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 5,
+        "output": 25,
+        "cacheRead": 0.5,
+        "cacheWrite5m": 6.25,
+        "cacheWrite1h": 10,
+        "note": ""
+      }
+    },
+    "claude-opus-4-7": {
+      "label": "Opus 4.7",
+      "aliases": null,
+      "vendor": "anthropic",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": null,
+        "modes": [
+          "adaptive"
+        ],
+        "alwaysOn": false,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 5,
+        "output": 25,
+        "cacheRead": 0.5,
+        "cacheWrite5m": 6.25,
+        "cacheWrite1h": 10,
+        "note": ""
+      }
+    },
+    "claude-opus-4-8": {
+      "label": "Opus 4.8",
+      "aliases": null,
+      "vendor": "anthropic",
+      "contextWindow": 200000,
+      "maxOutputTokens": 64000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": null,
+        "modes": [
+          "adaptive"
+        ],
+        "alwaysOn": false,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 5,
+        "output": 25,
+        "cacheRead": 0.5,
+        "cacheWrite5m": 6.25,
+        "cacheWrite1h": 10,
+        "note": ""
+      }
+    },
+    "claude-opus-5": {
+      "label": "Opus 5",
+      "aliases": null,
+      "vendor": "anthropic",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": null,
+        "modes": [
+          "adaptive"
+        ],
+        "alwaysOn": true,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 5,
+        "output": 25,
+        "cacheRead": 0.5,
+        "cacheWrite5m": 6.25,
+        "cacheWrite1h": 10,
+        "note": ""
+      }
+    },
+    "claude-sonnet-4-5": {
+      "label": "Sonnet 4.5",
+      "aliases": null,
+      "vendor": "anthropic",
+      "contextWindow": 200000,
+      "maxOutputTokens": 64000,
+      "reasoning": {
+        "supported": false,
+        "efforts": null,
+        "defaultEffort": ""
+      },
+      "thinking": {
+        "supported": null,
+        "modes": [
+          "enabled",
+          "disabled"
+        ],
+        "alwaysOn": false,
+        "defaultBudgetTokens": 10000
+      },
+      "pricing": {
+        "input": 3,
+        "output": 15,
+        "cacheRead": 0.3,
+        "cacheWrite5m": 3.75,
+        "cacheWrite1h": 6,
+        "note": ""
+      }
+    },
+    "claude-sonnet-4-6": {
+      "label": "Sonnet 4.6",
+      "aliases": null,
+      "vendor": "anthropic",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "max"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": null,
+        "modes": [
+          "adaptive",
+          "enabled",
+          "disabled"
+        ],
+        "alwaysOn": false,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 3,
+        "output": 15,
+        "cacheRead": 0.3,
+        "cacheWrite5m": 3.75,
+        "cacheWrite1h": 6,
+        "note": ""
+      }
+    },
+    "claude-sonnet-5": {
+      "label": "Sonnet 5",
+      "aliases": null,
+      "vendor": "anthropic",
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": null,
+        "modes": [
+          "adaptive"
+        ],
+        "alwaysOn": true,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 2,
+        "output": 10,
+        "cacheRead": 0.2,
+        "cacheWrite5m": 2.5,
+        "cacheWrite1h": 4,
+        "note": ""
+      }
+    },
+    "gpt-4o": {
+      "label": "GPT-4o",
+      "aliases": null,
+      "vendor": "openai",
+      "contextWindow": 128000,
+      "maxOutputTokens": 16384,
+      "reasoning": {
+        "supported": false,
+        "efforts": null,
+        "defaultEffort": ""
+      },
+      "thinking": {
+        "supported": false,
+        "modes": null,
+        "alwaysOn": null,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 2.5,
+        "output": 10,
+        "cacheRead": 1.25,
+        "cacheWrite5m": null,
+        "cacheWrite1h": null,
+        "note": ""
+      }
+    },
+    "gpt-4o-mini": {
+      "label": "GPT-4o Mini",
+      "aliases": null,
+      "vendor": "openai",
+      "contextWindow": 128000,
+      "maxOutputTokens": 16384,
+      "reasoning": {
+        "supported": false,
+        "efforts": null,
+        "defaultEffort": ""
+      },
+      "thinking": {
+        "supported": false,
+        "modes": null,
+        "alwaysOn": null,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 0.15,
+        "output": 0.6,
+        "cacheRead": 0.075,
+        "cacheWrite5m": null,
+        "cacheWrite1h": null,
+        "note": ""
+      }
+    },
+    "gpt-5": {
+      "label": "GPT-5",
+      "aliases": null,
+      "vendor": "openai",
+      "contextWindow": 400000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "minimal",
+          "low",
+          "medium",
+          "high"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": false,
+        "modes": null,
+        "alwaysOn": null,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 1.25,
+        "output": 10,
+        "cacheRead": 0.125,
+        "cacheWrite5m": null,
+        "cacheWrite1h": null,
+        "note": ""
+      }
+    },
+    "gpt-5-mini": {
+      "label": "GPT-5 Mini",
+      "aliases": null,
+      "vendor": "openai",
+      "contextWindow": 400000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "minimal",
+          "low",
+          "medium",
+          "high"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": false,
+        "modes": null,
+        "alwaysOn": null,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 0.25,
+        "output": 2,
+        "cacheRead": 0.025,
+        "cacheWrite5m": null,
+        "cacheWrite1h": null,
+        "note": ""
+      }
+    },
+    "gpt-5.3-codex": {
+      "label": "GPT-5.3 Codex",
+      "aliases": null,
+      "vendor": "openai",
+      "contextWindow": 400000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": false,
+        "modes": null,
+        "alwaysOn": null,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 1.75,
+        "output": 14,
+        "cacheRead": 0.175,
+        "cacheWrite5m": null,
+        "cacheWrite1h": null,
+        "note": ""
+      }
+    },
+    "gpt-5.3-codex-spark": {
+      "label": "GPT-5.3 Codex Spark",
+      "aliases": null,
+      "vendor": "openai",
+      "contextWindow": 400000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": false,
+        "modes": null,
+        "alwaysOn": null,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 1.75,
+        "output": 14,
+        "cacheRead": 0.175,
+        "cacheWrite5m": null,
+        "cacheWrite1h": null,
+        "note": ""
+      }
+    },
+    "gpt-5.4": {
+      "label": "GPT-5.4",
+      "aliases": null,
+      "vendor": "openai",
+      "contextWindow": 400000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": false,
+        "modes": null,
+        "alwaysOn": null,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 2.5,
+        "output": 15,
+        "cacheRead": 0.25,
+        "cacheWrite5m": null,
+        "cacheWrite1h": null,
+        "note": ""
+      }
+    },
+    "gpt-5.5": {
+      "label": "GPT-5.5",
+      "aliases": null,
+      "vendor": "openai",
+      "contextWindow": 400000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": false,
+        "modes": null,
+        "alwaysOn": null,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 5,
+        "output": 30,
+        "cacheRead": 0.5,
+        "cacheWrite5m": null,
+        "cacheWrite1h": null,
+        "note": ""
+      }
+    },
+    "gpt-5.6-luna": {
+      "label": "GPT-5.6 Luna",
+      "aliases": null,
+      "vendor": "openai",
+      "contextWindow": 400000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": false,
+        "modes": null,
+        "alwaysOn": null,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 0.2,
+        "output": 1.2,
+        "cacheRead": 0.02,
+        "cacheWrite5m": null,
+        "cacheWrite1h": null,
+        "note": ""
+      }
+    },
+    "gpt-5.6-sol": {
+      "label": "GPT-5.6 Sol",
+      "aliases": null,
+      "vendor": "openai",
+      "contextWindow": 400000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": false,
+        "modes": null,
+        "alwaysOn": null,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 4,
+        "output": 20,
+        "cacheRead": 0.4,
+        "cacheWrite5m": null,
+        "cacheWrite1h": null,
+        "note": "Promotional pricing through 2026-11-21."
+      }
+    },
+    "gpt-5.6-terra": {
+      "label": "GPT-5.6 Terra",
+      "aliases": null,
+      "vendor": "openai",
+      "contextWindow": 400000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": false,
+        "modes": null,
+        "alwaysOn": null,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 2,
+        "output": 12,
+        "cacheRead": 0.2,
+        "cacheWrite5m": null,
+        "cacheWrite1h": null,
+        "note": ""
+      }
+    },
+    "gpt-6-astra": {
+      "label": "GPT-6 Astra",
+      "aliases": null,
+      "vendor": "openai",
+      "contextWindow": 1050000,
+      "maxOutputTokens": 128000,
+      "reasoning": {
+        "supported": null,
+        "efforts": [
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "defaultEffort": "medium"
+      },
+      "thinking": {
+        "supported": false,
+        "modes": null,
+        "alwaysOn": null,
+        "defaultBudgetTokens": 0
+      },
+      "pricing": {
+        "input": 10,
+        "output": 50,
+        "cacheRead": 1,
+        "cacheWrite5m": null,
+        "cacheWrite1h": null,
+        "note": ""
+      }
+    }
+  },
+  "providers": {
+    "anthropic": {
+      "discovery": "live",
+      "reasoningTransport": "",
+      "models": null,
+      "fallbackModels": [
+        "claude-fable-5-1",
+        "claude-opus-5",
+        "claude-sonnet-5",
+        "claude-opus-4-8",
+        "claude-opus-4-7",
+        "claude-sonnet-4-6",
+        "claude-haiku-4-5-20251001"
+      ]
+    },
+    "chatgpt-subscription": {
+      "discovery": "catalog",
+      "reasoningTransport": "",
+      "models": [
+        "gpt-6-astra",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "gpt-5.5"
+      ],
+      "fallbackModels": null
+    },
+    "claude": {
+      "discovery": "catalog",
+      "reasoningTransport": "cli-flag",
+      "models": [
+        "claude-fable-5-1",
+        "claude-opus-5",
+        "claude-sonnet-5",
+        "claude-fable-5",
+        "claude-opus-4-8",
+        "claude-opus-4-7",
+        "claude-opus-4-6",
+        "claude-sonnet-4-6",
+        "claude-haiku-4-5-20251001"
+      ],
+      "fallbackModels": null
+    },
+    "codex": {
+      "discovery": "catalog",
+      "reasoningTransport": "",
+      "models": [
+        "gpt-6-astra",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "gpt-5.3-codex",
+        "gpt-5.3-codex-spark"
+      ],
+      "fallbackModels": null
+    },
+    "dockermodelrunner": {
+      "discovery": "live",
+      "reasoningTransport": "",
+      "models": null,
+      "fallbackModels": null
+    },
+    "gemini": {
+      "discovery": "live",
+      "reasoningTransport": "",
+      "models": null,
+      "fallbackModels": null
+    },
+    "lmstudio": {
+      "discovery": "live",
+      "reasoningTransport": "",
+      "models": null,
+      "fallbackModels": null
+    },
+    "ollama": {
+      "discovery": "live",
+      "reasoningTransport": "",
+      "models": null,
+      "fallbackModels": null
+    },
+    "ollama-cloud": {
+      "discovery": "live",
+      "reasoningTransport": "",
+      "models": null,
+      "fallbackModels": null
+    },
+    "openai": {
+      "discovery": "catalog",
+      "reasoningTransport": "",
+      "models": [
+        "gpt-6-astra",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "gpt-5.6-luna",
+        "gpt-5.5",
+        "gpt-5.4",
+        "gpt-5",
+        "gpt-5-mini",
+        "gpt-4o",
+        "gpt-4o-mini"
+      ],
+      "fallbackModels": null
+    },
+    "openrouter": {
+      "discovery": "live",
+      "reasoningTransport": "",
+      "models": null,
+      "fallbackModels": null
+    }
+  }
+}
